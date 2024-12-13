@@ -1,0 +1,18 @@
+Installer vite pour avoir un serveur web et 
+va aider aussi a traduire le TS(POO) en JS pour etre compris par le
+navigateur.
+
+directive : bout de code js ki va venir se  greffer a elt et va venir enrichir son comportement ou son appartenance
+
+les directives se reposent sur les attributs d ou les directives d'attributs.(en js ou ts l'attribut est
+entre [nomattribut])
+
+Quand a du code ki se repete on a besoin il faut le Recfactoriser pour faciliter la maintenance et les test. Et Pour cela
+on a les services(= classe ki vont noous rendre un service et vont etre appele dans plusieurs directives)
+
+
+l'injection de dependance c est le fait que nos outils ont besoin d 'autres outils et on envie qu on nous les passe 
+vedirectemnt dans notre constructeur  au moment de la creation de la directive.
+La framework angular a pour mission quand il voit une directive et kil veut la construire de passer 
+les elements dont a besoin cette directive(elts html sur lequel on greff la direcive) et un service ki sera utile a 
+la directive.

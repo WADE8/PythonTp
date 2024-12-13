@@ -1,0 +1,103 @@
+Un espace de travail peut contenir 1 ou plusieurs applications , 
+on pouura partage entre ces app des libraries tierces.
+
+Commnde pour creer unn espace de travail: ng new --create-application=false nomespace
+Cmd pour lancer le server dune application d un espace: ng serve nomapplication -o (open directement dans le navigateur)
+Options pour confihgurer un project Angular(ex:minimal , style).
+
+le fichier angular.json contient la configuartion d angular cli.
+package.json ki contient les dependence de notre projet
+
+
+ts.config.json: Fichier ki contient la configuration du compilateur TS pour le projet angular
+
+C est dans le dossier src/app ke l on va cree nos intefaces composants dont avoir besoin
+
+Il est important de regrouper des composants par fonctionnalites; par exemple tous les composants ki servent 
+a l'authentification entre eux(Et angular permet de grouper des composants grace aux modules).
+
+Un composant (c est classe(logic) et vue), il a un cycle de vie, nait , qu'il peut etre modifie
+ et mourrir quand l user change de page
+
+Interfaces de cycle de vie composant(Oninit,Ondestroy)
+Une fois que lon a implemente l'interface il faut definir sa methode associe (ngOInnit())
+
+
+
+
+Un model en ANGULAR AIDE MODELISER UN TYPE OBJET BIEN PRECIS(Pour cela on cree une interface Typescript)
+
+template-url est utilise pour passer l'url vers le fichier de notre template (fichier html)(vue)
+
+On peut declarer des variables refences dans le template. avec le mot cle #nomvar
+
+Le pseudo evenemnt keyup.enter (evenmt ki se produit quand  l user tape la touche "ENTER"
+
+DIRECTIVE
+une directive d 'attribut nous permet de changer l 'apparence ou le comportement d un element du DOM 
+cmd pour creer une directive "ng generate directive nomdirective"
+
+ElementRef fait reference a l elemt du dom sur lequel on va aplliquer notre directive d'attribut.
+
+Rechercher Interface(HostListener,input)
+
+Generer un pipe , cmd(ng generate pipe nomPipe
+Les pipes sont utiles qd les donnes sont juge trop brutes. 
+
+
+Routing:
+//NB:Declarer toujours les routes les plus specifiq en haut et les plus globales en dessous
+
+//on intercepte toutes les routes grace a l operateur **
+//NB le mettre toujours en tant dernier route
+
+
+SERVICE:
+Pour generer un servive dans un dossier on use la cmd ng generate service NOMDOSSIER NOMSERVICE
+
+**Injection des dependances des services(faire des rechcerchers)
+
+Un serive est dispo soit dans l'ensemble de l appli 
+ou soit dans un module de l application(en utilisant les providers)
+
+
+FORMULAIRE.
+
+Pour user les directives ngmodel et ngForm(validation,traiement donnes) viennent du module 'formsModule', il faut l injecter dans
+les modules des omposants pour que ces composant puissent user ngModel et ngForm.
+la directive ngModel contient [()]  nous permet d avoir une liaison bidirectionelle. ki (va nous permettre de pousser
+des donnes de la classe du composant vers le template , et m tepms remonter les evenemts du template composant vers sa classe)
+
+On peut greer des regles de validation personalise pour un formulaire
+
+ngform et ngModel vont nous permettre de creer des classes css pour savoir si tel champ est valide ou non,
+si l user a deja interagit avec un champ ou non.(Piloter dinamyqmemt le css en fonction de ceux que fait l'user )
+
+.ng-valid et .ngnvalid(classe fourni par angular)
+
+PROGRAMMTION REACTIVE
+Progration reactive = programmation avec des flux de donnes asynchrones
+
+Definition de flux:
+Sequence d evenements en cours ki sont ordonnes dans le temps.
+On peut appliquer des operations sur un flux d evenement et meme sur un flux de serveur distant
+Les flux peuvent emettre trois types de reponses differentes
+(Pour chaq typpe de reponse on peut definir une fonction a executer) .
+les evements du flux represente soit des valeurs (en cas de succes) , soit des erreurs, et des terminaison (fin du flux)
+Les valeurs de la reponse sont (nombre, tableau ,objet etc)
+
+Bibliotheque JS RxJs pour la programmation reactive 
+
+
+Dans RxJs un flux d evenement est represente par un observable
+ki est similaire a un tableau (avec des methodes similaire,collection assynchrone)  
+stockant les donnes au fur a mesure dans le temps.
+
+la methode subscribe va nous permettre de nous abonner a un flux 
+Un obesrvable est different de promeese meme si tout deux gere l asynchrone.
+Mais un observale n est pas quelque chose qa usage unique il continura d emtre des evenmets
+jusqua il emtte un evement  de terminaison pour qu'on se desabonne de lui.
+On peut transformer un observable en une promesse grace a la methode toPromise() RxJS.
+
+API: Interface de programmation ki va nous permetre de communiquer avec un service distant.
+
