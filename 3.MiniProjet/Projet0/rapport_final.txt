@@ -1,0 +1,6 @@
+Rapport des opérations
+======================
+Total INFO : 37
+Total WARNING : 0
+Total ERROR : 0
+Total CRITICAL : 0
