@@ -15,8 +15,8 @@ def image(mot):
 
 def suite(n):
     u = '1'  # Terme de départ
-    for _ in range(n):
-        print(u)  # Afficher le terme courant
+    for _ in range(n+1):
+        print(f"U{_} = {u}")  # Afficher le terme courant
         u = image(u)  # Passer au terme suivant
 
 # Afficher les 20 premiers termes de la suite
